@@ -14,16 +14,13 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
-import android.widget.ImageView;
 
-/**
- * Created by Mikhael LOPEZ on 09/10/2015.
- */
-public class CircularFillableLoaders extends ImageView {
+
+public class CircularFillableLoaders extends AppCompatImageView {
     // Default values
     private static final float DEFAULT_AMPLITUDE_RATIO = 0.05f;
     private static final float DEFAULT_WATER_LEVEL_RATIO = 0.5f;
@@ -101,7 +98,7 @@ public class CircularFillableLoaders extends ImageView {
         } else {
             borderPaint.setStrokeWidth(0);
         }
-
+        attributes.recycle();
     }
     //endregion
 
@@ -280,7 +277,6 @@ public class CircularFillableLoaders extends ImageView {
             return bitmap;
         } catch (OutOfMemoryError e) {
             // Simply return null of failed bitmap creations
-            Log.e(getClass().toString(), "Encountered OutOfMemoryError while generating bitmap!");
             return null;
         }
     }
@@ -358,12 +354,15 @@ public class CircularFillableLoaders extends ImageView {
 
     public void setProgress(int progress) {
         // vertical animation.
+        if (!isInEditMode()){
         ObjectAnimator waterLevelAnim = ObjectAnimator.ofFloat(this, "waterLevelRatio", waterLevelRatio, 1f - ((float) progress / 100));
         waterLevelAnim.setDuration(1000);
         waterLevelAnim.setInterpolator(new DecelerateInterpolator());
-        AnimatorSet animatorSetProgress = new AnimatorSet();
-        animatorSetProgress.play(waterLevelAnim);
-        animatorSetProgress.start();
+        waterLevelAnim.start();
+        }
+//        AnimatorSet animatorSetProgress = new AnimatorSet();
+//        animatorSetProgress.play(waterLevelAnim);
+//        animatorSetProgress.start();
     }
     //endregion
 
@@ -390,7 +389,7 @@ public class CircularFillableLoaders extends ImageView {
      *
      * @param waveShiftRatio Should be 0 ~ 1. Default to be 0.
      */
-    private void setWaveShiftRatio(float waveShiftRatio) {
+    public void setWaveShiftRatio(float waveShiftRatio) {
         if (this.waveShiftRatio != waveShiftRatio) {
             this.waveShiftRatio = waveShiftRatio;
             invalidate();

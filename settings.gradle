@@ -1,1 +1,1 @@
-include ':circularfillableloaders-example', ':circularfillableloaders'
+include ':circularfillableloaders-example', ':circularfillableloaders', ':circularfillableloaders-1.2.1'

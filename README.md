@@ -1,24 +1,15 @@
-<p align="center"><img src="http://i66.tinypic.com/5zgqwn.png"></p>
 
-CircularFillableLoaders
-=================
-
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CircularFillableLoaders-lightgrey.svg?style=flat)](https://android-arsenal.com/details/1/2897)
-[![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
-[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
-[![Twitter](https://img.shields.io/badge/Twitter-@LopezMikhael-blue.svg?style=flat)](http://twitter.com/lopezmikhael)
+# CircularFillableLoaders
 
 This is an Android project allowing to realize a beautiful circular fillable loaders to be used for splashscreen for example.
 
 <img src="/preview/preview.gif" alt="sample" title="sample" width="300" height="447" align="right" vspace="52" />
 
-USAGE
------
+## USAGE
 
-To make a circular fillable loaders add CircularFillableLoaders in your layout XML and add CircularFillableLoaders library in your project or you can also grab it via Gradle:
-
+#### click [here](),download and compile
 ```groovy
-compile 'com.mikhaellopez:circularfillableloaders:1.2.0'
+compile project(':circularfillableloaders-1.2.1')
 ```
 
 XML
@@ -37,10 +28,10 @@ XML
             app:cfl_wave_color="#3f51b5" />
 ```
 
-You must use the following properties in your XML to change your CircularImageView.
+You can use the following properties in your XML to change your CircularImageView.
 
 
-#####Properties:
+##### Properties:
 
 * `app:cfl_progress`        (integer)   -> default 0
 * `app:cfl_border`          (boolean)   -> default true
