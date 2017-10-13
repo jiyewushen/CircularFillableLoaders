@@ -7,7 +7,7 @@ This is an Android project allowing to realize a beautiful circular fillable loa
 
 ## USAGE
 
-#### click [here](),download and compile
+#### click [here](https://github.com/jiyewushen/CircularFillableLoaders/blob/master/circularfillableloaders-1.2.1/circularfillableloaders-1.2.1.aar),download and compile
 ```groovy
 compile project(':circularfillableloaders-1.2.1')
 ```
